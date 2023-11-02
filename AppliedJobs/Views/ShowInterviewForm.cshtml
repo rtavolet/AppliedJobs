@@ -1,0 +1,62 @@
+﻿@model AppliedJobs.Models.JobApp
+
+<h4>JobApp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowInterviewForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" class="form-control" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isRecruiter" /> @Html.DisplayNameFor(model => model.isRecruiter)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobLink" class="control-label"></label>
+                <input asp-for="JobLink" class="form-control" />
+                <span asp-validation-for="JobLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateApplied" class="control-label"></label>
+                <input asp-for="DateApplied" class="form-control" />
+                <span asp-validation-for="DateApplied" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Interview" /> @Html.DisplayNameFor(model => model.Interview)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Rejected" /> @Html.DisplayNameFor(model => model.Rejected)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

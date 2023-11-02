@@ -1,0 +1,42 @@
+﻿@model AppliedJobs.Models.Recruiter
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Recruiter</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Recruiter Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RecruiterName)
+        </dd>
+        <dt class = "col-sm-2">
+            Job title
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            Date Contacted
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateContacted)
+        </dd>
+        <dt class = "col-sm-2">
+            Status
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

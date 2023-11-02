@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AppliedJobs.Models.JobApp>
+
+@{
+    ViewData["Title"] = "Applications";
+}
+
+<h1>Applications</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th>
+                Applied Through a Recruiter?
+            </th>
+            <th>
+                Job Link
+            </th>
+            <th>
+                Date Applied
+            </th>
+            <th>
+                Interview?
+            </th>
+            <th>
+                Rejected?
+            </th>
+            <th>
+                Notes
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isRecruiter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateApplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rejected)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
